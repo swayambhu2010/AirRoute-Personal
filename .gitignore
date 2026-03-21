@@ -1,0 +1,47 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode user settings
+xcuserdata/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+
+# API Keys — NEVER commit
+Config.xcconfig
+
+# Xcode build files
+DerivedData/
+build/
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+
+# CocoaPods (ignore if not using)
+Pods/
+
+# Carthage (ignore if not using)
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Archives
+*.xcarchive
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Logs
+*.log
+
+# Temporary files
+*.swp
+*.tmp
