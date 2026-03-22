@@ -8,6 +8,7 @@
 import Foundation
 import CoreLocation
 import Combine
+import SharedModels
 
 @MainActor
 final class MapViewModel: ObservableObject {

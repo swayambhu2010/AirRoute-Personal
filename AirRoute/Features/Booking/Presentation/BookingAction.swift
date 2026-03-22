@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 enum BookingAction {
     case onAppear           // ← lifecycle only, no side effects
