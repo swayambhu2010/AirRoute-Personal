@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SharedModels
 
 // MARK: - PreviewFactory
 // Creates ViewModels with mock dependencies

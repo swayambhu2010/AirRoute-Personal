@@ -7,6 +7,7 @@
 
 import Foundation
 import ComposableArchitecture
+import SharedModels
 
 // The interface — wraps your existing UseCase
 struct HistoryClient {

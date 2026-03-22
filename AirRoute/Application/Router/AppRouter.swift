@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import ComposableArchitecture
+import SharedModels
 
 @MainActor
 final class AppRouter: ObservableObject {
