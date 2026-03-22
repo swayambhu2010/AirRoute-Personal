@@ -187,21 +187,17 @@ final class AppRouter: ObservableObject {
     // MARK: Screen 4
     private func makeHistoryScreen() -> HistoryScreen {
         let store = Store(initialState: HistoryFeature.State()) {
-            HistoryFeature()
-        } withDependencies: {
-            $0.historyClient = .liveValue
+            HistoryFeature(
+                onLocationSelected: { [weak self] a, b in
+                    self?.popToRoot()
+                    self?.mapViewModel?.send(.preloadFromHistory(a: a, b: b))
+                },
+                onDismiss: { [weak self] in
+                    self?.pop()
+                }
+            )
         }
-        
-        return HistoryScreen(
-            store: store,
-            onLocationSelected: { [weak self] a, b in
-                self?.popToRoot()
-                self?.mapViewModel?.send(.preloadFromHistory(a: a, b: b))
-            },
-            onDismiss: { [weak self] in
-                self?.pop()
-            }
-        )
+        return HistoryScreen(store: store)
     }
     
     // MARK: Screen 5

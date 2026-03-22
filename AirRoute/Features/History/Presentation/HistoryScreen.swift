@@ -9,14 +9,11 @@ import ComposableArchitecture
 import SwiftUI
 
 struct HistoryScreen: View {
-    
-    @Perception.Bindable var store: StoreOf<HistoryFeature>
-    
-    // Navigation callbacks passed directly to the View
-    // not to the Reducer
-    let onLocationSelected: (LocationPoint, LocationPoint) -> Void
-    let onDismiss: () -> Void
-    
+
+    // @Bindable replaces @StateObject
+    // store.x replaces viewModel.state.x
+    @Bindable var store: StoreOf<HistoryFeature>
+
     var body: some View {
         VStack(spacing: 0) {
             summaryHeader
@@ -29,13 +26,13 @@ struct HistoryScreen: View {
             }
         }
         .onAppear {
-            store.send(.onAppear)
+            store.send(.onAppear)       // identical to viewModel.send(.onAppear)
         }
         .alert("Error",
-               isPresented: Binding(
+            isPresented: Binding(
                 get:  { store.errorMessage != nil },
                 set:  { _ in store.send(.errorDismissed) }
-               )
+            )
         ) {
             Button("OK") { store.send(.errorDismissed) }
         } message: {
@@ -43,7 +40,7 @@ struct HistoryScreen: View {
         }
         .toolbar(.hidden, for: .navigationBar)
     }
-    
+
     private var summaryHeader: some View {
         HStack {
             VStack(spacing: 6) {
@@ -62,12 +59,11 @@ struct HistoryScreen: View {
         }
         .padding(.vertical, 20).padding(.horizontal, 24)
     }
-    
+
     private var bookingList: some View {
         List(store.bookings) { booking in
             Button {
-                store.send(.cellTapped(booking))
-                onLocationSelected(booking.locationA, booking.locationB)
+                store.send(.cellTapped(booking))  // identical to viewModel.send()
             } label: {
                 historyCell(booking: booking)
             }
@@ -75,7 +71,7 @@ struct HistoryScreen: View {
         }
         .listStyle(.plain)
     }
-    
+
     @ViewBuilder
     private func historyCell(booking: BookingResult) -> some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -92,11 +88,11 @@ struct HistoryScreen: View {
         }
         .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     private var loadingView: some View {
         VStack { Spacer(); ProgressView().tint(.black); Spacer() }
     }
-    
+
     private var emptyView: some View {
         VStack { Spacer(); Text("No history for this month").foregroundColor(.secondary); Spacer() }
     }
