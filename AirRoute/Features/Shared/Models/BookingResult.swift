@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BookingResult: Identifiable {
+struct BookingResult: Identifiable, Equatable {
 
     // MARK: - Properties
     let id: String

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import ComposableArchitecture
 
 @MainActor
 final class AppRouter: ObservableObject {
@@ -185,26 +186,22 @@ final class AppRouter: ObservableObject {
     
     // MARK: Screen 4
     private func makeHistoryScreen() -> HistoryScreen {
-        let viewModel = HistoryViewModel(
-            fetchHistoryUseCase: FetchHistoryUseCase(
-                repository: container.historyRepository
-            ),
+        let store = Store(initialState: HistoryFeature.State()) {
+            HistoryFeature()
+        } withDependencies: {
+            $0.historyClient = .liveValue
+        }
+        
+        return HistoryScreen(
+            store: store,
             onLocationSelected: { [weak self] a, b in
-                // Pop to root → Screen 1
                 self?.popToRoot()
-                // Send preload action to MapViewModel
-                // MapViewModel pre-fills A + B
-                // sets button to Book
-                // re-fetches AQI
-                self?.mapViewModel?.send(
-                    .preloadFromHistory(a: a, b: b)
-                )
+                self?.mapViewModel?.send(.preloadFromHistory(a: a, b: b))
             },
             onDismiss: { [weak self] in
                 self?.pop()
             }
         )
-        return HistoryScreen(viewModel: viewModel)
     }
     
     // MARK: Screen 5
