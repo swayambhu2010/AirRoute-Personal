@@ -12,7 +12,7 @@ struct HistoryScreen: View {
 
     // @Bindable replaces @StateObject
     // store.x replaces viewModel.state.x
-    @Bindable var store: StoreOf<HistoryFeature>
+    @Perception.Bindable var store: StoreOf<HistoryFeature>
 
     var body: some View {
         VStack(spacing: 0) {
