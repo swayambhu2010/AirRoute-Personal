@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 enum LocationDetailAction {
     case onAppear

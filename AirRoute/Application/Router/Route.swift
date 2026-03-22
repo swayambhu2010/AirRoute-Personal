@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 enum Route: Hashable {
     case locationDetail(location: LocationPoint, type: LocationType)

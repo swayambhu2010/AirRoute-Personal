@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 final class MockSavedLocationsRepository: SavedLocationsRepositoryProtocol {
 
