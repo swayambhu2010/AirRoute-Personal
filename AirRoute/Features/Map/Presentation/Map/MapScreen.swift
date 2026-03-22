@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreLocation
 import Combine
+import SharedModels
 
 struct MapScreen: View {
 

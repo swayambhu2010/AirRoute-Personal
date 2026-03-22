@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 // MARK: - BookingResponseDTO
 // Decodable — received from POST /books

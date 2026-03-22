@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SharedModels
 
 // MARK: - LocationLabelView
 // A or B label at bottom of Screen 1

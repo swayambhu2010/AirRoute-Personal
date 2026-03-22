@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 extension ReverseGeocodeDTO {
     func toDomain() -> LocationPoint {

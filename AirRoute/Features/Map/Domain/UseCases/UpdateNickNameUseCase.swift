@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 // MARK: - Protocol
 protocol UpdateNicknameUseCaseProtocol {

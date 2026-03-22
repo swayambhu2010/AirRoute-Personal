@@ -7,6 +7,7 @@
 
 
 import Foundation
+import SharedModels
 
 final class LocationRepository: LocationRepositoryProtocol {
 

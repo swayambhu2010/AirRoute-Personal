@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87008A672F6FF98E00095058 /* SharedModels in Frameworks */ = {isa = PBXBuildFile; productRef = 87008A662F6FF98E00095058 /* SharedModels */; };
 		871895022F65C6BC00EF7A80 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 871895012F65C6BC00EF7A80 /* Alamofire */; };
 		871895052F65C6F800EF7A80 /* GoogleMaps in Frameworks */ = {isa = PBXBuildFile; productRef = 871895042F65C6F800EF7A80 /* GoogleMaps */; };
 		871895B92F66760A00EF7A80 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 871895B82F66760A00EF7A80 /* Config.xcconfig */; };
+		87FB616E2F6FD29E007507D5 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 87FB616D2F6FD29E007507D5 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 			files = (
 				871895052F65C6F800EF7A80 /* GoogleMaps in Frameworks */,
 				871895022F65C6BC00EF7A80 /* Alamofire in Frameworks */,
+				87FB616E2F6FD29E007507D5 /* ComposableArchitecture in Frameworks */,
+				87008A672F6FF98E00095058 /* SharedModels in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +119,8 @@
 			packageProductDependencies = (
 				871895012F65C6BC00EF7A80 /* Alamofire */,
 				871895042F65C6F800EF7A80 /* GoogleMaps */,
+				87FB616D2F6FD29E007507D5 /* ComposableArchitecture */,
+				87008A662F6FF98E00095058 /* SharedModels */,
 			);
 			productName = AirRoute;
 			productReference = 87EF00F62F65965700FE5913 /* AirRoute.app */;
@@ -174,6 +180,8 @@
 			packageReferences = (
 				871895002F65C6BC00EF7A80 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				871895032F65C6F800EF7A80 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */,
+				87FB616C2F6FD29E007507D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				87008A652F6FF98E00095058 /* XCLocalSwiftPackageReference "Packages/SharedModels" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 87EF00F72F65965700FE5913 /* Products */;
@@ -511,6 +519,13 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		87008A652F6FF98E00095058 /* XCLocalSwiftPackageReference "Packages/SharedModels" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/SharedModels;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCRemoteSwiftPackageReference section */
 		871895002F65C6BC00EF7A80 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
@@ -528,9 +543,21 @@
 				minimumVersion = 10.10.0;
 			};
 		};
+		87FB616C2F6FD29E007507D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.25.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		87008A662F6FF98E00095058 /* SharedModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedModels;
+		};
 		871895012F65C6BC00EF7A80 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 871895002F65C6BC00EF7A80 /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -540,6 +567,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 871895032F65C6F800EF7A80 /* XCRemoteSwiftPackageReference "ios-maps-sdk" */;
 			productName = GoogleMaps;
+		};
+		87FB616D2F6FD29E007507D5 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 87FB616C2F6FD29E007507D5 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

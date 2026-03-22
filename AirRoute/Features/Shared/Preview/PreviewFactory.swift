@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import SharedModels
 
 // MARK: - PreviewFactory
 // Creates ViewModels with mock dependencies
@@ -88,7 +89,7 @@ enum PreviewFactory {
     }
 
     // MARK: - HistoryViewModel
-    static func makeHistoryViewModel() -> HistoryViewModel {
+   /* static func makeHistoryViewModel() -> HistoryViewModel {
         let fetchHistoryUseCase = FetchHistoryUseCase(
             repository: container.historyRepository
         )
@@ -97,7 +98,7 @@ enum PreviewFactory {
             onLocationSelected: { _, _ in },
             onDismiss: {}
         )
-    }
+    }*/
 
     // MARK: - SavedLocationsViewModel
     static func makeSavedLocationsViewModel(

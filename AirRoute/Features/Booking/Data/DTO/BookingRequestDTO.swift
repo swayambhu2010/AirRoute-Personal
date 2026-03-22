@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SharedModels
 
 // MARK: - BookingRequestDTO
 // Encodable — sent as POST body to /books
